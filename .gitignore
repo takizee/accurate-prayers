@@ -2,7 +2,7 @@
 # Edit at https://www.toptal.com/developers/gitignore?templates=django,pycharm,linux
 
 ### Google Calendar Api ###
-client-secrets.json
+#client-secrets.json
 token.pkl
 ### Django ###
 *.log
