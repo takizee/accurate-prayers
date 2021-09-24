@@ -1,6 +1,9 @@
 # Created by https://www.toptal.com/developers/gitignore/api/django,pycharm,linux
 # Edit at https://www.toptal.com/developers/gitignore?templates=django,pycharm,linux
 
+### Google Calendar Api ###
+client-secrets.json
+token.pkl
 ### Django ###
 *.log
 *.pot
