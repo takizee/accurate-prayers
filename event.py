@@ -1,9 +1,9 @@
 from setup.buildtheservice import service
 from datetime import datetime,timedelta
-from times import get_prayer
+from helpers import construct_start_and_end_time
+from consts import TIMEZONE,CALENDAR_ID,PRAYERS
 
-TIMEZONE = 'Africa/Cairo'
-CALENDAR_ID='primary'
+
 
 def get_event_by_name(name:str):
     calendar_id='primary'
@@ -25,19 +25,11 @@ def get_event_by_name(name:str):
     return event
 def update_event(event):
     # check if the event searched for exists
+    # e.g : in my calendar , there is no 'Fajr' event
+    # so , if the event parameter is 'Fajr' , that means that -> event['items']==[]
     if event['items']!=[]:
         event_name=event['items'][0]['summary']
-        prayer_time=get_prayer(event_name)
-        new_hour=prayer_time.split(":")[0]
-        new_min=prayer_time.split(":")[1]
-        now=datetime.now()
-        new_start = f'{now.year}-{now.month}-{now.day}T{new_hour}:{new_min}:00'
-        tmp_end = datetime.strptime(new_start, '%Y-%m-%dT%H:%M:00')
-        if event_name=='Jumaa':
-            tmp_end_2=tmp_end + timedelta(minutes=60)
-        else:
-            tmp_end_2 = tmp_end + timedelta(minutes=30)
-        new_end = f'{tmp_end_2.year}-{tmp_end_2.month}-{tmp_end_2.day}T{tmp_end_2.hour}:{tmp_end_2.minute}:00'
+        new_start,new_end=construct_start_and_end_time(event_name)
         event_body = {
             'start': {'dateTime': new_start, 'timeZone': TIMEZONE},
             'end': {'dateTime': new_end, 'timeZone': TIMEZONE},
@@ -45,10 +37,37 @@ def update_event(event):
         event_id=event['items'][0]['id']
         service.events().patch(calendarId=CALENDAR_ID,eventId=event_id,body=event_body).execute()
 
+
+
+def create_event(name:str):
+    # todo : create event
+    new_start,new_end=construct_start_and_end_time(name)
+    event = {
+        'summary': name,
+        'start': {
+            'dateTime': new_start,
+            'timeZone': TIMEZONE,
+        },
+        'end': {
+            'dateTime': new_end,
+            'timeZone': TIMEZONE,
+        },
+        'recurrence': [
+            'RRULE:FREQ=DAILY'
+        ],
+        'reminders': {
+            'useDefault': False,
+            'overrides': [
+                {'method': 'popup', 'minutes': 5},
+            ],
+        },
+    }
+
+    event = service.events().insert(calendarId='primary', body=event).execute()
 def update_all_prayers():
-    prayers=['Fajr','Dhuhr','Jumaa','Asr','Maghrib','Isha']
-    for prayer in prayers:
+    for prayer in PRAYERS:
         update_event(get_event_by_name(prayer))
+
 
 
 
