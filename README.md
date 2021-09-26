@@ -64,8 +64,16 @@ python ./setup/buildtheservice.py
 
 ## Run the script
 ```commandline
-
+python app.py [city]
 ```
-## Create the Cron Job
+Replace [city] with your city.
+here is a list of famous cities:
 
+cairo,alexandria,giza,asyut
+
+or refrence this page for and search for your city.
+
+https://ask-aladdin.com/egypt-cities/
+## Create the Cron Job
+Soon...
     

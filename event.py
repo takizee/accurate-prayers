@@ -4,7 +4,6 @@ from helpers import construct_start_and_end_time
 from consts import TIMEZONE,CALENDAR_ID,PRAYERS
 
 
-
 def get_event_by_name(name:str):
     calendar_id='primary'
     maxResults=1
@@ -36,12 +35,21 @@ def update_event(event):
         }
         event_id=event['items'][0]['id']
         service.events().patch(calendarId=CALENDAR_ID,eventId=event_id,body=event_body).execute()
-
-
-
 def create_event(name:str):
-    # todo : create event
     new_start,new_end=construct_start_and_end_time(name)
+    # colorId :
+    # 1 -> Lavander
+    # 2 -> Sage ( My color of choice for prayer events )
+    # 3 -> Grape
+    # 4 -> Flamingo
+    # 5 -> banana
+    # 6 -> Tangerine
+    # 7 -> Peacock
+    # 8 -> Graphite
+    # 9 -> Blueberry
+    # 10 -> Basil
+    # 11 -> Tomato
+
     event = {
         'summary': name,
         'start': {
@@ -61,6 +69,7 @@ def create_event(name:str):
                 {'method': 'popup', 'minutes': 5},
             ],
         },
+        'colorId':'2'
     }
 
     event = service.events().insert(calendarId='primary', body=event).execute()
