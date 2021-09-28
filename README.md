@@ -1,7 +1,10 @@
 # Update Prayer Times in Google Calendar
 ```diff
-- [This app is under verification by Google's Safety,so you have to cantact me with to add your account to the test users]
+- This app is under verification by Google's Safety,so you have to cantact me  to add your account to the test users
+- click on Advanced and send me an email with your Gmail in it .
 ```
+
+![click](images/0.png?raw=true "Alert")
 
 This project is solving the problem of the continously changing prayer times.
 
