@@ -38,8 +38,15 @@ git clone https://github.com/takizee/accurate-prayers.git
 ```
 ## Setup Environment and Dependencies
 
-After activating your virtual environment , setup the dependencies from 'requirement.txt'
-
+* Create the virtual environment , if you prefer virtualenv run:
+```commandline
+virtualenv accurate-prayers
+```
+then activate it :
+```commandline
+source ./accurate-prayers/bin/activate
+```
+* Install the dependencies:
 ```commandline
 pip install -r requirements.txt
 ```
