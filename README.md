@@ -2,7 +2,6 @@
 ```diff
 - [This app is under verification by Google's Safety,so you have to cantact me with to add your account to the test users]
 ```
-[This app is under verification by Google's Safety,so you have to cantact me  to add your account to the test users]
 
 This project is solving the problem of the continously changing prayer times.
 
