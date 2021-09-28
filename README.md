@@ -31,6 +31,11 @@ Because all what matters is praying , anything else is a detail!
 
 [comment]: <> (![After]&#40;images/after.png?raw=true "After"&#41; )
 
+## Cloning 
+To clone the repo run:
+```commandline
+git clone https://github.com/takizee/accurate-prayers.git
+```
 ## Setup Environment and Dependencies
 
 After activating your virtual environment , setup the dependencies from 'requirement.txt'
