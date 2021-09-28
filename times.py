@@ -1,7 +1,7 @@
 import requests
 import sys
 
-city=sys.argv[1]
+city = sys.argv[1]
 API_END_POINT = f'https://api.pray.zone/v2/times/today.json?city={city}'
 
 
@@ -20,7 +20,6 @@ def get_todays_times():
     #  'Midnight': '23:16'}
     times = r.json()['results']['datetime'][0]['times']
     return times
-
 
 
 def get_fajr() -> str:
@@ -47,12 +46,9 @@ def get_isha() -> str:
     times = get_todays_times()
     return times['Isha']
 
-def get_prayer(name:str)->str:
-    times=get_todays_times()
-    if name=='Jumaa':
-        name='Dhuhr'
+
+def get_prayer(name: str) -> str:
+    times = get_todays_times()
+    if name == 'Jumaa':
+        name = 'Dhuhr'
     return times[name]
-
-
-
-
