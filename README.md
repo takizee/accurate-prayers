@@ -43,7 +43,7 @@ project,it'll be a simple Google Calendar Addon.
 ## Cloning 
 To clone the repo run:
 ```commandline
-git clone https://github.com/takizee/accurate-prayers.git
+git clone https://github.com/tarikwaleed/productive-muslim.git
 ```
 ## Dependencies
 
@@ -53,7 +53,7 @@ virtualenv accurate-prayers
 ```
 then activate it :
 ```commandline
-source ./accurate-prayers/bin/activate
+source ./productive-muslim/bin/activate
 ```
 * Install the dependencies:
 ```commandline
