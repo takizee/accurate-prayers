@@ -8,7 +8,7 @@ Google Calendar Addon to create and updates prayer times events to help muslims 
 # Concept
 The idea behind this time management technique is to organize your productivity sessions so that each session begins and ends with a prayer.
 
-# Day Structure
+### Day Structure
 The day is structured as time blocks between prayers (Fard and sunnah) 
 
 1- after fajr -> duha [ 3 hours on average depending on when you're going to pray duha]
@@ -27,9 +27,10 @@ The day is structured as time blocks between prayers (Fard and sunnah)
 Note that the duration of each block is not fixed as prayer times changes , blocks will be shorter in winter than summer.
 
 
-# Note
-i'm planning to use 'Google Apps Script' to make it more user friendly without all the hustle of setting up the
-project,it'll be a simple Google Calendar Addon.
+# The Plan
+The plan is to rewrite this project using Google Apps Script to make it a Google calendar addon and to create a website to spread the idea along with other productivity tips applicable no just to muslims life but also on anyone applying islam practices on his life.
+
+# Installation
 
 ```diff
 - This app is under verification by Google's Safety,so you have to cantact me  to add your account to the test users
@@ -38,7 +39,7 @@ project,it'll be a simple Google Calendar Addon.
 
 ![click](images/0.png?raw=true "Alert")
 
-# Installation
+
 
 ## Cloning 
 To clone the repo run:
